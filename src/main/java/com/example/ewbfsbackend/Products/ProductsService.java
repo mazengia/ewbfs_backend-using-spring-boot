@@ -8,5 +8,7 @@ public interface ProductsService {
     ProductsDTO addProducts(Products products);
 
     ProductsDTO findProductsById(Long id);
+    ProductsDTO deleteCustomersById(Long id);
     ProductsDTO updateProducts(Long id,Products products);
+
 }

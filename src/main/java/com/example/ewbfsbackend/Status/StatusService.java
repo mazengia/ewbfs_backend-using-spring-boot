@@ -9,4 +9,6 @@ public interface StatusService {
 
     StatusDTO findStatusById(Long id);
     StatusDTO updateStatus(Long id, Status status);
+
+    StatusDTO deleteCustomersById(Long id);
 }

@@ -53,4 +53,10 @@ public class StatusServiceImpl implements StatusService {
             return  addStatus(oldData);
         }
         return null;    }
+
+    @Override
+    public StatusDTO deleteCustomersById(Long id) {
+        statusRepository.deleteById(id);
+        return null;
+    }
 }

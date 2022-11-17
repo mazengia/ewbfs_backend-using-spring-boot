@@ -1,5 +1,6 @@
 package com.example.ewbfsbackend.businessSector;
 
+import com.example.ewbfsbackend.Requests.RequestsDTO;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,13 @@ public class BusinessSectorController implements BusinessAPI {
     @Override
     public ResponseEntity<BusinessSectorDTO> findBusinessSectorById(Long id) {
         BusinessSectorDTO businessSectorDTO = businessSectorService.findBusinessSectorById(id);
+        if (businessSectorDTO != null) return ResponseEntity.ok(businessSectorDTO);
+        return ResponseEntity.noContent().build();
+    }
+
+    @Override
+    public ResponseEntity<BusinessSectorDTO> deleteBusinessSector(Long id) {
+        BusinessSectorDTO businessSectorDTO = businessSectorService.deleteBusinessSectorById(id);
         if (businessSectorDTO != null) return ResponseEntity.ok(businessSectorDTO);
         return ResponseEntity.noContent().build();
     }

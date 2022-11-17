@@ -27,7 +27,12 @@ public class StatusController implements StatusAPI {
         if (statusDTO != null) return ResponseEntity.ok(statusDTO);
         return ResponseEntity.noContent().build();
     }
-
+    @Override
+    public ResponseEntity<StatusDTO> deleteStatus(Long id) {
+        StatusDTO statusDTO = statusService.deleteCustomersById(id);
+        if (statusDTO != null) return ResponseEntity.ok(statusDTO);
+        return ResponseEntity.noContent().build();
+    }
     @Override
     public ResponseEntity<CollectionModel<StatusDTO>> findAll(Integer page, Integer size) {
         {

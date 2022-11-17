@@ -46,6 +46,12 @@ public class ProductsServiceImpl implements ProductsService {
     }
 
     @Override
+    public ProductsDTO deleteCustomersById(Long id) {
+        productsRepository.deleteById(id);
+        return null;
+    }
+
+    @Override
     public ProductsDTO updateProducts(Long id, Products products) {
         Products oldData = productsRepository.findById(id).orElseThrow(()->new EntityNotFoundException(Products.class,"Id",String.valueOf(id)));
         if (oldData != null) {

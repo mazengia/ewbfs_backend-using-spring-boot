@@ -9,6 +9,7 @@ public interface CustomersService {
     CustomersDTO addCustomers(Customers customers);
 
     CustomersDTO findCustomersById(Long id);
+    CustomersDTO deleteCustomersById(Long id);
 
     CustomersDTO updateCustomers(Long id, Customers customers);
 }

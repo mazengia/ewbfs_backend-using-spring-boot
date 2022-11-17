@@ -38,6 +38,13 @@ public class BusinessSectorServiceImpl implements BusinessSectorService {
     }
 
     @Override
+    public BusinessSectorDTO deleteBusinessSectorById(Long id) {
+        businessSectorRepository.deleteById(id);
+        return null;
+
+    }
+
+    @Override
     public BusinessSectorDTO findBusinessSectorById(Long id) {
         Businesses businesses = businessSectorRepository.findById(id).orElse(null);
         if (businesses != null) {

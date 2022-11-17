@@ -26,7 +26,12 @@ public class ProductsController implements ProductAPI {
         if (productsDTO != null) return ResponseEntity.ok(productsDTO);
         return ResponseEntity.noContent().build();
     }
-
+    @Override
+    public ResponseEntity<ProductsDTO> deleteCustomer(Long id) {
+        ProductsDTO productsDTO = productsService.deleteCustomersById(id);
+        if (productsDTO != null) return ResponseEntity.ok(productsDTO);
+        return ResponseEntity.noContent().build();
+    }
     @Override
     public ResponseEntity<CollectionModel<ProductsDTO>> findAll(Integer page, Integer size) {
         {

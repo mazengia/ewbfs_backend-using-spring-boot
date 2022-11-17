@@ -12,7 +12,8 @@ public interface CustomersAPI {
 
     @GetMapping("/{id}")
     ResponseEntity<CustomersDTO> findCustomerById(@PathVariable Long id);
-
+    @DeleteMapping("/{id}")
+    ResponseEntity<CustomersDTO> deleteCustomer(@PathVariable Long id);
     @GetMapping
     ResponseEntity<CollectionModel<CustomersDTO>> findAll(
             @RequestParam(required = false, defaultValue = "0") Integer page,

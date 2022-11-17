@@ -1,5 +1,6 @@
 package com.example.ewbfsbackend.businessSector;
 
+import com.example.ewbfsbackend.Requests.RequestsDTO;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +13,8 @@ public interface BusinessAPI {
 
     @GetMapping("/{id}")
     ResponseEntity<BusinessSectorDTO> findBusinessSectorById(@PathVariable Long id);
-
+    @DeleteMapping("/{id}")
+    ResponseEntity<BusinessSectorDTO> deleteBusinessSector(@PathVariable Long id);
     @GetMapping
     ResponseEntity<CollectionModel<BusinessSectorDTO>> findAll(
             @RequestParam(required = false, defaultValue = "0") Integer page,

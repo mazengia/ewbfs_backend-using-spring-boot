@@ -28,6 +28,13 @@ public class CustomersController  implements CustomersAPI {
     }
 
     @Override
+    public ResponseEntity<CustomersDTO> deleteCustomer(Long id) {
+        CustomersDTO customersDTO = customersService.deleteCustomersById(id);
+        if (customersDTO != null) return ResponseEntity.ok(customersDTO);
+        return ResponseEntity.noContent().build();
+    }
+
+    @Override
     public ResponseEntity<CollectionModel<CustomersDTO>> findAll(Integer page, Integer size) {
         {
             CollectionModel<CustomersDTO> customersDTOS = customersService.findAll(page, size);

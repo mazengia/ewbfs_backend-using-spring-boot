@@ -12,6 +12,8 @@ public interface ProductAPI {
 
     @GetMapping("/{id}")
     ResponseEntity<ProductsDTO> findProductsId(@PathVariable Long id);
+    @DeleteMapping("/{id}")
+    ResponseEntity<ProductsDTO> deleteCustomer(@PathVariable Long id);
 
     @GetMapping
     ResponseEntity<CollectionModel<ProductsDTO>> findAll(

@@ -12,6 +12,8 @@ public interface StatusAPI {
 
     @GetMapping("/{id}")
     ResponseEntity<StatusDTO> findStatusById(@PathVariable Long id);
+    @DeleteMapping("/{id}")
+    ResponseEntity<StatusDTO> deleteStatus(@PathVariable Long id);
 
     @GetMapping
     ResponseEntity<CollectionModel<StatusDTO>> findAll(
